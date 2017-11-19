@@ -12,6 +12,7 @@ def user_path(instance, filename):
     # honux/absdfer.png
     return '%s/%s.%s' % (instance.owner.username, pid, extension)
 
+
 class Photo(models.Model):
     image = models.ImageField(upload_to = user_path)
     owner = models.ForeignKey(settings.AUTH_USER_MODEL)

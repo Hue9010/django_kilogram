@@ -23,8 +23,8 @@ urlpatterns = [
     url(r'^$', kilogram_views.IndexView.as_view(), name = 'root'),
     url(r'^kilogram/', include('kilogram.urls')),
     url(r'^accounts/', include('django.contrib.auth.urls')),
-    url(r'^accounts/signup/$', kilogram_views.CreateUserView.as_view(), name = 'signup'),
-    url(r'^accounts/signup/done/$', kilogram_views.RegisteredView.as_view(), name = 'create_user_done'),
+    url(r'^accounts/signup$', kilogram_views.CreateUserView.as_view(), name = 'signup'),
+    url(r'^accounts/signup/done$', kilogram_views.RegisteredView.as_view(), name = 'create_user_done'),
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
